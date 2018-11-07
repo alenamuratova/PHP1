@@ -188,7 +188,7 @@ function trancslitText ($str, $separator = '_') {
     return $text;
 }
 
-echo trancslitText($str = 'Здесь типа есть какой-то текст очень интересный');
+echo trancslitText($str = 'здесь типа есть какой-то текст очень интересный');
 
 ?>
 
