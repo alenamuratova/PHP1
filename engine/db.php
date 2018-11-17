@@ -6,13 +6,9 @@ function getAssocResult($sql){
     $arrayResult = array();
     while($row = mysqli_fetch_assoc($result))
         $arrayResult[] = $row;
-        echo '<span class="views" onclick="alert(\'Это количество просмотров, спасибо и Вам, если посмотрели!\')"></span>';
-        echo '<i>' . $row['views'] . '</i>';
-        echo '<span class="likes" id="like_' . $row['id'] . '" onclick="like_plus(' . $row['id'] . ')"></span>';
-        echo '<i>' . $row['likes'] . '</i>';
+    
     return $arrayResult;
 }
-
 
 function executeQuery($sql){
     $db = connect();
