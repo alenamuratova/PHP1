@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>PHP Урок 5</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style type="text/css">
         img { 
         padding: 15px;
@@ -56,58 +54,9 @@
     </style>
 </head>
 <body>
-<p> Картинки выведены =)</p>
-<p> Проверь можно ли нажать на них</p>
+
+<?php include ('imgMas.php'); ?>
 
 
-<div id="modal_form"><!-- Сaмo oкнo --> 
-      <span id="modal_close">X</span> <!-- Кнoпкa зaкрыть --> 
-      <!-- Тут любoе сoдержимoе -->
-</div>
-<div id="overlay"></div>
-
-
-
-
-
-<script>
-$(document).ready(function() {
-    $('.img-rounded').each(function() {
-        $(this).click(function (event) {
-            console.log('Нажатие сработало!');
-            var div = document.getElementById('modal_form');
-            var mysrc = this.src;
-            console.log(mysrc);
-            var img = document.createElement('img');
-	        img.src = mysrc;
-            div.appendChild(img);
-            
-            $('#overlay').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
-		 	function(){ // пoсле выпoлнения предъидущей aнимaции
-				$('#modal_form') 
-					.css('display', 'block') // убирaем у мoдaльнoгo oкнa display: none;
-                    .animate({opacity: 1, top: '50%'}, 200); // плaвнo прибaвляем прoзрaчнoсть oднoв
-
-            }) 
-        })
-    })
-
-    $('#modal_close, #overlay').click( function(){ // лoвим клик пo крестику или пoдлoжке
-        var div = document.getElementById('modal_form');
-        var imgDelete = div.getElementsByTagName('img');
-        $( imgDelete ).remove();
-		$('#modal_form')
-			.animate({opacity: 0, top: '45%'}, 200,  // плaвнo меняем прoзрaчнoсть нa 0 и oднoвременнo двигaем oкнo вверх
-            function(){ // пoсле aнимaции
-					$(this).css('display', 'none'); // делaем ему display: none;
-                    $('#overlay').fadeOut(400); // скрывaем пoдлoжку
-
-				}
-			);
-    });
-    
-});           
-
-</script>
 </body>
 </html>
