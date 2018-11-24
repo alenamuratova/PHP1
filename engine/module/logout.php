@@ -1,0 +1,4 @@
+<?php
+echo $_SESSION['user'];
+unset($_SESSION['user']);
+session_destroy();
